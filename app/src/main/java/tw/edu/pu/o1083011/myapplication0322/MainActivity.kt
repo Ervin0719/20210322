@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
         setContentView(R.layout.activity_main)
         txv.setOnClickListener(this)
         img.setOnClickListener(this)
+        btn4.setOnClickListener(this)
     }
 
     fun Add(v: View) {
@@ -36,8 +37,12 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
         if(v==txv){
             counter++
         }
-        else {
+        else if(v==img){
             counter+=2
+        }
+        else{
+            counter= (1..100).random()
+            txv.text = counter.toString()
         }
         txv.text=counter.toString()
     }
